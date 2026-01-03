@@ -1,592 +1,592 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legal Method | Browne Ubawuchi</title>
+    <title>Logic & Law | Browne Ubawuchi</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a2a6c;
-            --secondary-color: #b21f1f;
-            --accent-color: #fdbb2d;
-            --text-color: #333;
-            --bg-color: #f4f7f6;
+            --bg: #02040a;
+            --accent: #00f2ff;
+            --logic-gold: #fdbb2d;
+            --glass: rgba(255, 255, 255, 0.03);
         }
 
         body {
-            font-family: 'Georgia', serif;
-            line-height: 1.8;
-            color: var(--text-color);
-            background-color: var(--bg-color);
             margin: 0;
-            padding: 0;
+            background-color: var(--bg);
+            color: #e0e0e0;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
         }
 
-        header, footer {
-            background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        /* 3D Canvas Background */
+        #canvas-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            opacity: 0.6;
         }
 
-        header h1, footer p {
-            margin: 0;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        nav {
-            background: #fff;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
+        /* --- NEW STUDENT HEADER SECTION --- */
+        .student-header {
+            width: 100%;
+            padding: 40px 10%;
+            background: linear-gradient(to bottom, rgba(0, 242, 255, 0.05), transparent);
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            border-bottom: 2px solid var(--primary-color);
-            z-index: 1000;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--primary-color);
+        .student-info h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            color: white;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #fff, var(--accent), #fff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
+
+        .course-tag {
+            font-size: 0.8rem;
+            color: var(--logic-gold);
             font-weight: bold;
-            font-size: 0.9rem;
+            border: 1px solid var(--logic-gold);
+            padding: 5px 15px;
+            border-radius: 4px;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: white;
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+
+        /* Layout */
+        .section {
+            min-height: 100vh;
+            padding: 80px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero { text-align: center; align-items: center; }
+        
+        h1 {
+            font-size: clamp(3rem, 12vw, 7rem);
+            margin: 0;
+            background: linear-gradient(to bottom, #fff 30%, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .sub-deck {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--logic-gold);
+            margin-top: -10px;
+        }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
             padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            color: var(--secondary-color);
-            border-left: 5px solid var(--primary-color);
-            padding-left: 15px;
-            margin-top: 40px;
-        }
-
-        h3 {
-            color: var(--primary-color);
-            margin-top: 30px;
-        }
-
-        .highlight-box {
-            background-color: #fdf6e3;
-            border-right: 4px solid var(--accent-color);
-            padding: 20px;
-            margin: 20px 0;
-            font-style: italic;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
+            border-radius: 30px;
+            max-width: 800px;
             margin: 20px 0;
         }
 
-        table, th, td {
-            border: 1px solid #ddd;
-        }
+        .highlight { color: var(--accent); font-weight: bold; }
 
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .footer-credit {
-            font-size: 0.8rem;
-            opacity: 0.8;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Browne Ubawuchi</h1>
-    <p>Distinguished Lecture Series: Legal Method</p>
-</header>
-
-<nav>
-    <a href="#intro">Introduction</a>
-    <a href="#jurisprudence">Jurisprudence</a>
-    <a href="#classification">Classification</a>
-    <a href="#sources">Sources</a>
-    <a href="#reasoning">Legal Reasoning</a>
-</nav>
-
-<div class="container">
-    
-    <section id="intro">
-        <h2>1. Introduction to Legal Method</h2>
-        <p>Legal method is the study of the techniques, processes, and strategies used by lawyers, judges, and legal scholars to identify, interpret, and apply the law. It is the "machinery" of the legal profession.</p>
-        <div class="highlight-box">
-            "Law is not just a set of rules, but a method of thinking and a system of social engineering."
-        </div>
-    </section>
-
-    <hr>
-
-    <section id="jurisprudence">
-        <h2>2. Schools of Jurisprudence</h2>
-        <p>Jurisprudence is the philosophy of law. Different schools of thought offer varying perspectives on what law is and where its authority comes from.</p>
-        
-        <h3>The Natural Law School</h3>
-        <p>Proponents (like Aquinas and Cicero) argue that law is derived from a higher moral order or "nature." An unjust law is not a law ($Lex\ iniusta\ non\ est\ lex$).</p>
-
-        <h3>The Legal Positivism School</h3>
-        <p>Led by John Austin and H.L.A. Hart, this school posits that law is a command from a sovereign backed by sanctions. It separates "what the law is" from "what the law ought to be."</p>
-
-        <h3>The Historical School</h3>
-        <p>Friedrich Carl von Savigny argued that law is an organic growth of a people's spirit (the <em>Volksgeist</em>). It evolves with the culture and traditions of a society.</p>
-
-        <h3>The Sociological School</h3>
-        <p>Roscoe Pound viewed law as a tool for "Social Engineering"—balancing competing interests in society to achieve the greatest good with the least friction.</p>
-
-        <h3>Legal Realism</h3>
-        <p>Realists (like Oliver Wendell Holmes) argue that law is what the courts do in practice, not just what is written in books. "The life of the law has not been logic; it has been experience."</p>
-    </section>
-
-    <hr>
-
-    <section id="classification">
-        <h2>3. Classification of Law</h2>
-        <table>
-            <tr>
-                <th>Category</th>
-                <th>Description</th>
-                <th>Examples</th>
-            </tr>
-            <tr>
-                <td>Public Law</td>
-                <td>Governs relationship between individuals and the State.</td>
-                <td>Constitutional Law, Criminal Law.</td>
-            </tr>
-            <tr>
-                <td>Private Law</td>
-                <td>Governs relationships between individuals (Civil).</td>
-                <td>Contract Law, Tort, Family Law.</td>
-            </tr>
-            <tr>
-                <td>Substantive Law</td>
-                <td>The actual rules that define rights and duties.</td>
-                <td>The law defining "Theft."</td>
-            </tr>
-            <tr>
-                <td>Procedural Law</td>
-                <td>The rules by which those rights are enforced.</td>
-                <td>Evidence Law, Criminal Procedure.</td>
-            </tr>
-        </table>
-    </section>
-
-    <hr>
-
-    <section id="sources">
-        <h2>4. Sources of Law</h2>
-        <p>Where does the law come from? In a typical Common Law jurisdiction, the sources include:</p>
-        <ul>
-            <li><strong>The Constitution:</strong> The supreme law of the land.</li>
-            <li><strong>Statutes:</strong> Laws enacted by the legislature (Acts of Parliament/National Assembly).</li>
-            <li><strong>Judicial Precedent:</strong> The principle of <em>Stare Decisis</em> (standing by decided matters).</li>
-            <li><strong>Customary Law:</strong> Rules derived from long-standing traditions of a community.</li>
-            <li><strong>International Law:</strong> Treaties and conventions between nations.</li>
-        </ul>
-    </section>
-
-    <hr>
-
-    <section id="reasoning">
-        <h2>5. Legal Reasoning and Interpretation</h2>
-        <h3>Inductive vs. Deductive Reasoning</h3>
-        <p>Lawyers use <strong>deductive reasoning</strong> to apply general rules to specific facts, and <strong>inductive reasoning</strong> to derive general principles from a series of specific cases (precedents).</p>
-
-        <h3>Canons of Statutory Interpretation</h3>
-        <ol>
-            <li><strong>Literal Rule:</strong> Words are given their plain, ordinary meaning.</li>
-            <li><strong>Golden Rule:</strong> Used if the literal rule leads to an absurdity.</li>
-            <li><strong>Mischief Rule:</strong> Looks at the "mischief" the law was intended to remedy.</li>
-            <li><strong>Purposive Approach:</strong> Interpreting the law to give effect to its overall purpose.</li>
-        </ol>
-    </section>
-
-</div>
-
-<footer>
-    <p>Browne Ubawuchi</p>
-    <div class="footer-credit">© 2026 Legal Method Educational Resource. All Rights Reserved.</div>
-</footer>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sources of Law | Browne Ubawuchi</title>
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --accent: #c0392b;
-            --gold: #d4af37;
-            --light: #ecf0f1;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
-            color: #333;
-            background-color: #f9f9f9;
-            margin: 0;
-        }
-
-        header, footer {
-            background-color: var(--primary);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--gold);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-        }
-
-        .hero-sub {
-            font-style: italic;
-            color: var(--gold);
-        }
-
-        .main-content {
-            max-width: 1000px;
-            margin: 40px auto;
-            background: white;
-            padding: 60px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: var(--accent);
-            border-bottom: 2px solid var(--light);
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
-
-        .source-card {
-            border-left: 5px solid var(--primary);
-            background: #f8f9fa;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            padding: 15px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-
-        th {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 5px 10px;
-            background: var(--gold);
-            color: white;
-            font-size: 0.8rem;
-            border-radius: 3px;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            border-top: 5px solid var(--gold);
-            border-bottom: none;
-            margin-top: 50px;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Browne Ubawuchi</h1>
-    <p class="hero-sub">The Compendium on the Sources of Law</p>
-</header>
-
-<div class="main-content">
-    <section>
-        <h2>I. Definition of Sources</h2>
-        <p>In legal method, "Sources of Law" refers to the origins of legal rules. These are the materials from which a person (judge, lawyer, or citizen) or a legal system derives the rules that govern conduct within a society.</p>
-        
-        <div class="grid">
-            <div class="source-card">
-                <strong>Formal Sources:</strong>
-                <p>The legal procedures and methods by which a rule is established (e.g., the passing of a bill by the legislature).</p>
-            </div>
-            <div class="source-card">
-                <strong>Material Sources:</strong>
-                <p>The content or the actual substance of the law (e.g., customs, religious principles, or social values).</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>II. The Hierarchy of Sources</h2>
-        <p>In most modern constitutional democracies, the sources follow a strict hierarchy. If a lower source conflicts with a higher source, the higher source prevails.</p>
-        
-        
-
-        <table>
-            <tr>
-                <th>Level</th>
-                <th>Source Name</th>
-                <th>Authority</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>The Constitution</td>
-                <td>Supreme Law; nullifies any inconsistent law.</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Legislation (Statutes)</td>
-                <td>Acts of Parliament/Congress or Delegated Legislation.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Judicial Precedents</td>
-                <td>Common Law/Case Law ($Stare\ Decisis$).</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Customary Law</td>
-                <td>Established practices of a people (must pass tests of validity).</td>
-            </tr>
-        </table>
-    </section>
-
-    <section>
-        <h2>III. Primary Sources of Law</h2>
-        
-        <div class="source-card">
-            <span class="badge">Statutory Law</span>
-            <h3>1. Legislation</h3>
-            <p>Legislation is the deliberate enactment of legal rules by an organ of government (the Legislature). It is the most robust source of law in modern times because it can abrogate (cancel) existing common law or custom.</p>
-        </div>
-
-        <div class="source-card">
-            <span class="badge">Case Law</span>
-            <h3>2. Judicial Precedents</h3>
-            <p>Also known as "Judge-made law." It operates on the principle of <strong>Stare Decisis</strong>. When a superior court makes a decision, that decision becomes binding on all lower courts within the same jurisdiction for similar future cases.</p>
-            <ul>
-                <li><strong>Ratio Decidendi:</strong> The reason for the decision (Binding).</li>
-                <li><strong>Obiter Dictum:</strong> Something said "by the way" (Persuasive only).</li>
-            </ul>
-        </div>
-
-        <div class="source-card">
-            <span class="badge">Legacy Law</span>
-            <h3>3. Received English Law (Common Law Jurisdictions)</h3>
-            <p>Many jurisdictions incorporate English Common Law, the Doctrines of Equity, and Statutes of General Application as a foundational source.</p>
-        </div>
-    </section>
-
-    <section>
-        <h2>IV. Secondary Sources</h2>
-        <p>These sources are not binding on their own but are used to persuade the court or to clarify the meaning of primary sources.</p>
-        <ul>
-            <li><strong>Law Reports:</strong> Published volumes of judicial decisions.</li>
-            <li><strong>Legal Textbooks:</strong> Works by eminent jurists and scholars.</li>
-            <li><strong>Legal Periodicals/Journals:</strong> Academic reviews of legal trends.</li>
-            <li><strong>Legal Dictionaries:</strong> Defining technical terminology (e.g., Black's Law Dictionary).</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>V. Validity Tests for Customary Law</h2>
-        <p>Before a custom is accepted as a source of law by a court, it usually must pass several tests:</p>
-        <ol>
-            <li><strong>The Mirror Test:</strong> Is it a true reflection of the current people's practice?</li>
-            <li><strong>Repugnancy Test:</strong> Is it repugnant to natural justice, equity, and good conscience?</li>
-            <li><strong>Public Policy Test:</strong> Is it contrary to public interest or existing statutes?</li>
-        </ol>
-    </section>
-</div>
-
-<footer>
-    <p>Browne Ubawuchi</p>
-    <div style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">
-        Jurisprudential Excellence & Legal Methodology &bull; 2026
-    </div>
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Nature of Law | Browne Ubawuchi</title>
-    <style>
-        :root {
-            --ancient-blue: #0f2027;
-            --marble-white: #f0f2f0;
-            --sepia: #704214;
-            --classic-gold: #c5a059;
-        }
-
-        body {
-            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-            background-color: var(--marble-white);
-            color: #222;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        header, footer {
-            background-color: var(--ancient-blue);
-            color: var(--classic-gold);
-            padding: 3rem 1rem;
-            text-align: center;
-            border-bottom: 4px solid var(--classic-gold);
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 40px;
-            background: white;
-            box-shadow: 0 0 40px rgba(0,0,0,0.1);
-            border-radius: 15px;
-        }
-
-        .philosopher-grid {
+        .logic-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
-        .philosopher-card {
-            border: 1px solid #ddd;
-            padding: 25px;
-            border-top: 5px solid var(--classic-gold);
-            transition: transform 0.3s;
+        .logic-box {
+            border-left: 2px solid var(--accent);
+            padding: 20px;
+            background: rgba(0, 242, 255, 0.05);
+            transition: 0.3s;
         }
 
-        .philosopher-card:hover {
-            transform: translateY(-10px);
-            background-color: #fdfaf3;
-        }
-
-        .philosopher-name {
-            font-weight: bold;
-            color: var(--ancient-blue);
-            font-size: 1.4rem;
-            display: block;
+        .tag {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
             margin-bottom: 10px;
-        }
-
-        .quote {
-            font-style: italic;
-            color: #555;
-            border-left: 3px solid var(--classic-gold);
-            padding-left: 15px;
-            margin: 15px 0;
-        }
-
-        h2 {
-            text-align: center;
-            color: var(--ancient-blue);
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            text-decoration: underline;
-        }
-
-        .legal-definition {
-            background-color: #f4f4f4;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 50px;
-        }
-
-        footer {
-            border-top: 4px solid var(--classic-gold);
-            margin-top: 60px;
+            display: block;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Browne Ubawuchi</h1>
-    <p>Foundations of Legal Philosophy: Quid est Lex?</p>
-</header>
+    <div id="canvas-container"></div>
 
-<div class="container">
-    <section class="legal-definition">
-        <h2>The Complexity of Definition</h2>
-        <p>Defining "Law" is notoriously difficult. As <strong>H.L.A. Hart</strong> noted, few questions concerning human society have been asked with such persistence and answered by serious thinkers in so many diverse, strange, and even paradoxical ways.</p>
-        <p>At its core, law is a system of rules created and enforced through social or governmental institutions to regulate behavior.</p>
+    <header class="student-header">
+        <div class="student-info">
+            <h2 class="reveal">Browne Ubawuchi</h2>
+            <div style="font-size: 0.9rem; opacity: 0.7; margin-top: 5px;">Imo State University (IMSU)</div>
+        </div>
+        <div class="course-tag reveal">100LVL LAW COURSE</div>
+    </header>
+
+    <section class="section hero">
+        <span class="tag">The Blueprint of Justice</span>
+        <h1>LOGIC</h1>
+        <p class="sub-deck">"Law is reason, free from passion." — Aristotle</p>
     </section>
 
-    <h2>The Fathers of Jurisprudence</h2>
-    <p>To understand what law is, we must look at the giants upon whose shoulders the legal system stands.</p>
-
-    <div class="philosopher-grid">
-        <div class="philosopher-card">
-            <span class="philosopher-name">Thomas Aquinas</span>
-            <small>The Theological Father</small>
-            <p class="quote">"Law is an ordinance of reason for the common good, made by him who has care of the community, and promulgated."</p>
-            <p>He divided law into four: Eternal Law, Natural Law, Divine Law, and Human Law.</p>
+    <section class="section">
+        <div class="glass-panel reveal">
+            <span class="tag">01. The Definition</span>
+            <h2>Introduction to Logic</h2>
+            <p>In the legal sphere, <span class="highlight">Logic</span> is the study of principles of correct reasoning. For a 100lvl student, it is the most critical tool for analyzing statutes and judicial precedents.</p>
         </div>
+    </section>
 
-        <div class="philosopher-card">
-            <span class="philosopher-name">John Austin</span>
-            <small>The Father of Command Theory</small>
-            <p class="quote">"Law is the command of the sovereign, backed by the threat of a sanction."</p>
-            <p>He insisted that "The existence of law is one thing; its merit or demerit is another."</p>
+    <section class="section">
+        <span class="tag">02. Structure of Argument</span>
+        <h2>Logical Pillars</h2>
+        
+        <div class="logic-grid">
+            <div class="logic-box reveal">
+                <h3>Deduction</h3>
+                <p>Applying the <strong>General Law</strong> to a <strong>Specific Fact</strong>.</p>
+            </div>
+            <div class="logic-box reveal">
+                <h3>Induction</h3>
+                <p>Forming a <strong>General Law</strong> from <strong>Specific Observations</strong>.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="philosopher-card">
-            <span class="philosopher-name">H.L.A. Hart</span>
-            <small>The Analytical Giant</small>
-            <p class="quote">"Law is a union of primary and secondary rules."</p>
-            <p>He criticized Austin, arguing law is more than just "the gunman situ
+    <script>
+        // --- THREE.JS LOGIC NODES ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+        const group = new THREE.Group();
+        const geometry = new THREE.IcosahedronGeometry(0.1, 0);
+        const material = new THREE.MeshBasicMaterial({ color: 0x00f2ff, wireframe: true });
+
+        for(let i=0; i<150; i++) {
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set((Math.random()-0.5)*20, (Math.random()-0.5)*20, (Math.random()-0.5)*20);
+            group.add(mesh);
+        }
+        scene.add(group);
+        camera.position.z = 5;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            group.rotation.y += 0.0015;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // --- SCROLLREVEAL ---
+        ScrollReveal().reveal('.reveal', {
+            delay: 200,
+            distance: '30px',
+            origin: 'top',
+            opacity: 0,
+            duration: 1000,
+            interval: 200
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic & Reasoning | 3D Experience</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --accent: #00f2ff;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* 3D Canvas Background */
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, transparent 0%, var(--bg) 70%);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            margin: 0;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.3));
+        }
+
+        /* Content Sections */
+        .section {
+            min-height: 80vh;
+            padding: 100px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 24px;
+            max-width: 500px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .glass-card h2 {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--accent);
+            color: black;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* Floating Animation */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            width: 2px;
+            height: 50px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="canvas-container"></div>
+
+    <section class="hero">
+        <div class="tag">MODULE 01</div>
+        <h1 class="reveal">LOGIC</h1>
+        <p class="reveal">The Architecture of Thought</p>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <section class="section">
+        <div class="glass-card reveal">
+            <div class="tag">01. DEFINITION</div>
+            <h2>What is Logic?</h2>
+            <p>Logic is the systematic study of the forms of inference. It is the "toolbox" we use to separate a valid argument from a fallacy. In the world of law, logic is the bridge between evidence and a verdict.</p>
+        </div>
+    </section>
+
+    <section class="section" style="justify-content: flex-end;">
+        <div class="glass-card reveal">
+            <div class="tag">02. REASONING</div>
+            <h2>Deductive vs. Inductive</h2>
+            <p><strong>Deductive:</strong> If the premises are true, the conclusion <em>must</em> be true.<br>
+            <strong>Inductive:</strong> If the premises are true, the conclusion is <em>likely</em> to be true.</p>
+        </div>
+    </section>
+
+    <script>
+        // --- 3D BACKGROUND (Three.js) ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+        // Create a floating particle field
+        const geometry = new THREE.IcosahedronGeometry(1, 1);
+        const material = new THREE.MeshBasicMaterial({ color: 0x00f2ff, wireframe: true });
+        const points = [];
+
+        for (let i = 0; i < 50; i++) {
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set(
+                (Math.random() - 0.5) * 10,
+                (Math.random() - 0.5) * 10,
+                (Math.random() - 0.5) * 10
+            );
+            mesh.rotation.set(Math.random() * 2, Math.random() * 2, Math.random() * 2);
+            scene.add(mesh);
+            points.push(mesh);
+        }
+
+        camera.position.z = 5;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            points.forEach(p => {
+                p.rotation.x += 0.002;
+                p.rotation.y += 0.002;
+            });
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle Resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // --- ANIMATIONS (ScrollReveal) ---
+        ScrollReveal().reveal('.reveal', {
+            delay: 300,
+            distance: '50px',
+            origin: 'bottom',
+            duration: 1000,
+            interval: 200,
+            reset: true
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic & Reasoning | The Foundation of Law</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #02040a;
+            --accent: #00f2ff;
+            --logic-gold: #fdbb2d;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            color: #e0e0e0;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* 3D Canvas Background */
+        #canvas-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        /* Typography & Layout */
+        .section {
+            min-height: 100vh;
+            padding: 80px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero { text-align: center; align-items: center; }
+        
+        h1 {
+            font-size: clamp(3rem, 12vw, 7rem);
+            margin: 0;
+            background: linear-gradient(to bottom, #fff 30%, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .sub-deck {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--logic-gold);
+            margin-top: -10px;
+        }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 50px;
+            border-radius: 30px;
+            max-width: 800px;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .highlight { color: var(--accent); font-weight: bold; }
+
+        /* Logic Grid */
+        .logic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .logic-box {
+            border-left: 2px solid var(--accent);
+            padding: 20px;
+            background: rgba(0, 242, 255, 0.05);
+            transition: 0.3s;
+        }
+
+        .logic-box:hover { background: rgba(0, 242, 255, 0.1); transform: scale(1.02); }
+
+        .tag {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="canvas-container"></div>
+
+    <section class="section hero">
+        <span class="tag">The Blueprint of Justice</span>
+        <h1>LOGIC</h1>
+        <p class="sub-deck">"Law is reason, free from passion." — Aristotle</p>
+    </section>
+
+    <section class="section">
+        <div class="glass-panel reveal">
+            <span class="tag">01. The Definition</span>
+            <h2>What is Logic?</h2>
+            <p>Logic is not just "common sense." It is the <span class="highlight">formal science of correct reasoning</span>. In the legal world, logic ensures that a conclusion (The Verdict) is the unavoidable result of the facts (The Evidence).</p>
+            <p>Without logic, law is merely an exercise of power. With logic, law becomes a pursuit of <strong>Truth</strong>.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <span class="tag">02. The Two Paths</span>
+        <h2>Reasoning Methods</h2>
+        <div class="logic-grid">
+            <div class="logic-box reveal">
+                <h3>Deductive Reasoning</h3>
+                <p>Moving from a general rule to a specific case. If the rule is true and the facts fit, the result is <strong>Certain</strong>.</p>
+                <p class="highlight">Example: All citizens have rights. You are a citizen. Therefore, you have rights.</p>
+            </div>
+            <div class="logic-box reveal">
+                <h3>Inductive Reasoning</h3>
+                <p>Moving from specific observations to a general conclusion. This deals with <strong>Probability</strong>, not certainty.</p>
+                <p class="highlight">Example: Every contract signed with this firm has been valid. Therefore, the next one likely will be too.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="glass-panel reveal" style="border-right: 4px solid var(--logic-gold); border-left: none;">
+            <span class="tag">03. The Legal Engine</span>
+            <h2>The Syllogism</h2>
+            <p>This is the 3-step heart of a legal argument:</p>
+            <ol>
+                <li><strong>Major Premise:</strong> The Law (e.g., "Theft is a crime").</li>
+                <li><strong>Minor Premise:</strong> The Fact (e.g., "John took the car").</li>
+                <li><strong>Conclusion:</strong> The Verdict (e.g., "John committed a crime").</li>
+            </ol>
+            <p>If the first two are solid, the third is unshakeable.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>LAW-BASICS &copy; 2024 | Exploring the Architecture of Thought</p>
+    </footer>
+
+    <script>
+        // --- THREE.JS BACKGROUND ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+        // Create a "Node" system representing interconnected logic
+        const group = new THREE.Group();
+        const geometry = new THREE.SphereGeometry(0.05, 16, 16);
+        const material = new THREE.MeshBasicMaterial({ color: 0x00f2ff });
+
+        for(let i=0; i<100; i++) {
+            const mesh = new THREE.Mesh(geometry, m
