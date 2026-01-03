@@ -1,0 +1,990 @@
+<section class="section">
+    <span class="tag">10. The Syllogistic Formula</span>
+    <h2 style="font-size: 3rem; margin-bottom: 20px;">Terms in a Syllogism</h2>
+    <p style="margin-bottom: 40px; opacity: 0.8;">A standard categorical syllogism contains exactly <strong>three terms</strong>, each appearing twice across the three propositions. Identifying them is the first step in checking for validity.</p>
+    
+    <div class="glass-panel reveal" style="max-width: 100%; border-left: 5px solid var(--logic-gold);">
+        <h3 style="color: var(--logic-gold);">The Trio of Logic</h3>
+        
+        <div class="logic-grid" style="margin-top: 20px;">
+            <div class="logic-box" style="border-color: #ff4d4d;">
+                <h4 style="color: #ff4d4d;">1. The Major Term (P)</h4>
+                <p style="font-size: 0.9rem;">The predicate of the conclusion. It represents the broader category.</p>
+                <small>Location: Major Premise & Conclusion.</small>
+            </div>
+
+            <div class="logic-box" style="border-color: #00f2ff;">
+                <h4 style="color: #00f2ff;">2. The Minor Term (S)</h4>
+                <p style="font-size: 0.9rem;">The subject of the conclusion. It represents the specific case or individual.</p>
+                <small>Location: Minor Premise & Conclusion.</small>
+            </div>
+
+            <div class="logic-box" style="border-color: #00ff88;">
+                <h4 style="color: #00ff88;">3. The Middle Term (M)</h4>
+                <p style="font-size: 0.9rem;">The "Bridge." It connects the Major and Minor terms but <strong>never</strong> appears in the conclusion.</p>
+                <small>Location: Major Premise & Minor Premise.</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="glass-panel reveal" style="margin-top: 30px; background: rgba(255,255,255,0.02);">
+        <h3 style="text-align: center;">The Logical Architecture</h3>
+        <div style="font-family: 'Courier New', monospace; padding: 20px; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; line-height: 2;">
+            <p>Major Premise: All <span style="color: #00ff88;">[Lawyers]</span> are <span style="color: #ff4d4d;">[Educated]</span>.</p>
+            <p>Minor Premise: <span style="color: #00f2ff;">[Browne]</span> is a <span style="color: #00ff88;">[Lawyer]</span>.</p>
+            <hr style="opacity: 0.2;">
+            <p>Conclusion: Therefore, <span style="color: #00f2ff;">[Browne]</span> is <span style="color: #ff4d4d;">[Educated]</span>.</p>
+        </div>
+        
+        <div style="display: flex; justify-content: space-around; font-size: 0.8rem; margin-top: 15px;">
+            <span style="color: #ff4d4d;">● Major (P)</span>
+            <span style="color: #00f2ff;">● Minor (S)</span>
+            <span style="color: #00ff88;">● Middle (M)</span>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <span class="tag">12. The Unit of Truth</span>
+    <h2 style="font-size: 3rem; margin-bottom: 20px;">Categorical Propositions</h2>
+    <p style="margin-bottom: 40px; opacity: 0.8;">A proposition is a claim that can be verified. In formal logic, we use four standard types, classified by <strong>Quality</strong> (Affirmative/Negative) and <strong>Quantity</strong> (Universal/Particular).</p>
+
+    <div class="glass-panel reveal" style="max-width: 100%; border-left: 5px solid var(--accent);">
+        <h3>The Anatomy of a Proposition</h3>
+        <p>Every standard proposition consists of four parts:</p>
+        <div style="display: flex; gap: 10px; font-family: monospace; font-size: 1.2rem; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; justify-content: center;">
+            <span title="Quantifier" style="color: #ff4d4d;">[All]</span>
+            <span title="Subject" style="color: #00f2ff;">[Lawyers]</span>
+            <span title="Copula" style="color: #00ff88;">[are]</span>
+            <span title="Predicate" style="color: var(--logic-gold);">[Advocates]</span>
+        </div>
+        <div style="display: flex; justify-content: space-around; font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">
+            <span>Quantifier</span>
+            <span>Subject Term</span>
+            <span>Copula</span>
+            <span>Predicate Term</span>
+        </div>
+    </div>
+
+    
+    <div class="logic-grid" style="margin-top: 40px;">
+        <div class="logic-box reveal" style="border-color: #fff;">
+            <h4 style="color: white;">A: Universal Affirmative</h4>
+            <p>"All S is P"</p>
+        </div>
+        <div class="logic-box reveal" style="border-color: #fff;">
+            <h4 style="color: white;">E: Universal Negative</h4>
+            <p>"No S is P"</p>
+        </div>
+        <div class="logic-box reveal" style="border-color: #fff;">
+            <h4 style="color: white;">I: Particular Affirmative</h4>
+            <p>"Some S is P"</p>
+        </div>
+        <div class="logic-box reveal" style="border-color: #fff;">
+            <h4 style="color: white;">O: Particular Negative</h4>
+            <p>"Some S is not P"</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="glass-panel reveal" style="max-width: 100%; border: 2px solid var(--accent);">
+        <h2 style="color: var(--accent); text-align: center;">Knowledge Check: Propositions</h2>
+        <p style="text-align: center; opacity: 0.7;">Test your understanding of the 100lvl Logic Syllabus</p>
+        
+        <div id="quiz-container" style="margin-top: 30px;">
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>1. Which part of the proposition connects the subject and the predicate?</strong></p>
+                <button onclick="checkAnswer(this, false)" class="quiz-btn">The Quantifier</button>
+                <button onclick="checkAnswer(this, true)" class="quiz-btn">The Copula</button>
+                <button onclick="checkAnswer(this, false)" class="quiz-btn">The Premise</button>
+            </div>
+
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>2. What is the logical name for an 'E' Proposition?</strong></p>
+                <button onclick="checkAnswer(this, false)" class="quiz-btn">Universal Affirmative</button>
+                <button onclick="checkAnswer(this, true)" class="quiz-btn">Universal Negative</button>
+                <button onclick="checkAnswer(this, false)" class="quiz-btn">Particular Negative</button>
+            </div>
+
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>3. "Some students are not hardworking" is which type of proposition?</strong></p>
+                <button onclick="checkAnswer(this, false)" class="quiz-btn">I</button>
+                <button onclick="checkAnswer(this, false)" class="quiz-btn">A</button>
+                <button onclick="checkAnswer(this, true)" class="quiz-btn">O</button>
+            </div>
+
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>4. If a proposition is either True or False, it is said to have...</strong></p>
+                <button onclick="checkAnswer(this, true)" class="quiz-btn">Truth Value</button>
+                <button onclick="checkAnswer(this, false)" class="quiz-btn">Validity</button>
+                <button onclick="checkAnswer(this, false)" class="quiz-btn">Soundness</button>
+            </div>
+
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>5. Categorical Propositions are classified according to:</strong></p>
+                <button onclick="checkAnswer(this, false)" class="quiz-btn">Subject and Predicate</button>
+                <button onclick="checkAnswer(this, true)" class="quiz-btn">Quality and Quantity</button>
+                <button onclick="checkAnswer(this, false)" class="quiz-btn">Validity and Truth</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .quiz-btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        color: white;
+        text-align: left;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .quiz-btn:hover { background: rgba(0, 242, 255, 0.1); }
+    .correct { background: rgba(0, 255, 136, 0.2) !important; border-color: #00ff88 !important; }
+    .wrong { background: rgba(255, 77, 77, 0.2) !important; border-color: #ff4d4d !important; }
+</style>
+
+<script>
+    function checkAnswer(btn, isCorrect) {
+        if(isCorrect) {
+            btn.classList.add('correct');
+        } else {
+            btn.classList.add('wrong');
+        }
+        // Disable other buttons in the same question
+        const parent = btn.parentElement;
+        const buttons = parent.querySelectorAll('button');
+        buttons.forEach(b => b.style.pointerEvents = 'none');
+    }
+</script>
+<section class="section">
+    <span class="tag">13. The Four-Fold Scheme</span>
+    <h2 style="font-size: 3rem; margin-bottom: 20px;">Standard Form Categorical Propositions</h2>
+    <p style="margin-bottom: 40px; opacity: 0.8;">Every categorical proposition has a specific <strong>Letter Name</strong> (A, E, I, O). This system was developed to make the logic of language as precise as mathematics.</p>
+
+    <div class="logic-grid">
+        <div class="glass-panel reveal" style="max-width: 100%; border-left: 5px solid #00f2ff;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="color: #00f2ff;">Type A</h3>
+                <span class="tag">Universal Affirmative</span>
+            </div>
+            <p><strong>Form:</strong> All S is P.</p>
+            <p style="font-size: 0.9rem; opacity: 0.7;">It includes the entire subject class within the predicate class.</p>
+            <div class="logic-box" style="margin-top: 10px; border: 1px dashed #00f2ff;">
+                <em>"All Judges are Lawyers."</em>
+            </div>
+        </div>
+
+        <div class="glass-panel reveal" style="max-width: 100%; border-left: 5px solid #ff4d4d;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="color: #ff4d4d;">Type E</h3>
+                <span class="tag" style="color: #ff4d4d; border-color: #ff4d4d;">Universal Negative</span>
+            </div>
+            <p><strong>Form:</strong> No S is P.</p>
+            <p style="font-size: 0.9rem; opacity: 0.7;">It excludes the entire subject class from the predicate class.</p>
+            <div class="logic-box" style="margin-top: 10px; border: 1px dashed #ff4d4d;">
+                <em>"No Felons are Voters."</em>
+            </div>
+        </div>
+
+        <div class="glass-panel reveal" style="max-width: 100%; border-left: 5px solid #00ff88;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="color: #00ff88;">Type I</h3>
+                <span class="tag" style="color: #00ff88; border-color: #00ff88;">Particular Affirmative</span>
+            </div>
+            <p><strong>Form:</strong> Some S is P.</p>
+            <p style="font-size: 0.9rem; opacity: 0.7;">It asserts that at least one member of S is also a member of P.</p>
+            <div class="logic-box" style="margin-top: 10px; border: 1px dashed #00ff88;">
+                <em>"Some Laws are Unjust."</em>
+            </div>
+        </div>
+
+        <div class="glass-panel reveal" style="max-width: 100%; border-left: 5px solid var(--logic-gold);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="color: var(--logic-gold);">Type O</h3>
+                <span class="tag" style="color: var(--logic-gold); border-color: var(--logic-gold);">Particular Negative</span>
+            </div>
+            <p><strong>Form:</strong> Some S is not P.</p>
+            <p style="font-size: 0.9rem; opacity: 0.7;">It asserts that at least one member of S is excluded from P.</p>
+            <div class="logic-box" style="margin-top: 10px; border: 1px dashed var(--logic-gold);">
+                <em>"Some Crimes are not Felonies."</em>
+            </div>
+        </div>
+    </div>
+
+    <div class="glass-panel reveal" style="margin-top: 40px; text-align: center;">
+        <h3 style="color: var(--accent);">Visualizing the Classes</h3>
+        <p>In 100lvl Logic, we use <strong>Venn Diagrams</strong> to visualize these relationships. An empty area means "Nothing exists here," while an 'X' means "At least one thing exists here."</p>
+        
+    </div>
+</section>
+<section class="section">
+    <span class="tag">14. Conditional Logic</span>
+    <h2 style="font-size: 3rem; margin-bottom: 20px;">Hypothetical Propositions</h2>
+    <p style="margin-bottom: 40px; opacity: 0.8;">Unlike Categorical propositions, Hypothetical ones do not state facts directly. They state a <strong>relationship of dependence</strong> between two statements.</p>
+
+    <div class="logic-grid">
+        <div class="glass-panel reveal float" style="max-width: 100%; border-left: 5px solid #ff00ff;">
+            <h3 style="color: #ff00ff;">1. Conditional (If... Then)</h3>
+            <p>Connects an <strong>Antecedent</strong> to a <strong>Consequent</strong>.</p>
+            <div class="logic-box" style="background: rgba(255, 0, 255, 0.05);">
+                <em>"If it rains (P), then the court is adjourned (Q)."</em>
+            </div>
+        </div>
+
+        <div class="glass-panel reveal" style="max-width: 100%; border-left: 5px solid #00ff88; animation-delay: 0.5s;">
+            <h3 style="color: #00ff88;">2. Disjunctive (Either... Or)</h3>
+            <p>Presents two alternatives (members) that cannot both be false.</p>
+            <div class="logic-box" style="background: rgba(0, 255, 136, 0.05);">
+                <em>"Either the witness is lying, or the defendant is guilty."</em>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="glass-panel reveal" style="max-width: 100%; border: 2px solid #ff00ff; position: relative; overflow: hidden;">
+        <h2 style="text-align: center; color: #ff00ff;">Mastering the 'If-Then'</h2>
+        
+        <div id="hypo-quiz">
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>1. In the statement "If P, then Q", what is 'P' called?</strong></p>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">The Antecedent</button>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">The Consequent</button>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">The Copula</button>
+            </div>
+
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>2. Which proposition uses "Either... Or"?</strong></p>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">Conditional</button>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">Disjunctive</button>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">Categorical</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<script>
+    function handleResponse(btn, isCorrect) {
+        const parent = btn.parentElement;
+        const buttons = parent.querySelectorAll('.quiz-btn');
+        
+        // Disable all buttons in this question
+        buttons.forEach(b => b.style.pointerEvents = 'none');
+
+        if (isCorrect) {
+            btn.classList.add('correct');
+            // 🎉 Confetti Effect
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#00f2ff', '#ff00ff', '#fdbb2d']
+            });
+            // Voice/Text feedback
+            let msg = new SpeechSynthesisUtterance("Hurray! That is correct.");
+            window.speechSynthesis.speak(msg);
+        } else {
+            btn.classList.add('wrong');
+            // 📳 Haptic Feedback (Phone Buzz)
+            if (navigator.vibrate) {
+                navigator.vibrate([200, 100, 200]); 
+            }
+            // Shake animation
+            btn.parentElement.style.animation = "shake 0.5s";
+            setTimeout(() => btn.parentElement.style.animation = "", 500);
+        }
+    }
+</script>
+
+<style>
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-10px); }
+        50% { transform: translateX(10px); }
+        75% { transform: translateX(-10px); }
+        100% { transform: translateX(0); }
+    }
+    .float { animation: float 3s ease-in-out infinite; }
+</style>
+<section class="section">
+    <span class="tag">15. Linguistic Translation</span>
+    <h2 style="font-size: 3rem; margin-bottom: 20px;">Standard vs. Non-Standard</h2>
+    <p style="margin-bottom: 40px; opacity: 0.8;">Logic requires a strict format. Most sentences we speak are <strong>Non-Standard</strong>. To analyze them, we must translate them into the <strong>Standard A, E, I, O</strong> forms.</p>
+
+    <div class="logic-grid">
+        <div class="glass-panel reveal" style="max-width: 100%; border: 1px dashed rgba(255,255,255,0.3);">
+            <h3 style="color: #ff4d4d;">Non-Standard Form</h3>
+            <p>Everyday language that is often vague, missing a quantifier, or uses non-standard verbs.</p>
+            <ul style="font-size: 0.9rem; opacity: 0.7;">
+                <li>"Lawyers are rich."</li>
+                <li>"Not everyone is a thief."</li>
+                <li>"Birds fly."</li>
+            </ul>
+        </div>
+
+        <div class="glass-panel reveal" style="max-width: 100%; border: 1px solid var(--accent); background: rgba(0, 242, 255, 0.05);">
+            <h3 style="color: var(--accent);">Standard Form</h3>
+            <p>Must have: <strong>Quantifier + Subject + Copula + Predicate</strong>.</p>
+            <ul style="font-size: 0.9rem; font-weight: bold;">
+                <li>"All lawyers are rich people." (A)</li>
+                <li>"Some people are not thieves." (O)</li>
+                <li>"All birds are flying creatures." (A)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="glass-panel reveal" style="margin-top: 30px; border-left: 5px solid var(--logic-gold);">
+        <h3>Rules of Translation</h3>
+        <p>1. <strong>Identify the Quantifier:</strong> Is it 'All', 'No', or 'Some'?</p>
+        <p>2. <strong>Fix the Copula:</strong> Always use 'is', 'are', 'is not', or 'are not'.</p>
+        <p>3. <strong>Standardize the Terms:</strong> The subject and predicate must be <em>nouns</em> or <em>noun phrases</em>.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="glass-panel reveal" style="max-width: 100%; border: 2px solid var(--logic-gold);">
+        <h2 style="text-align: center; color: var(--logic-gold);">Challenge: The Logical Translator</h2>
+        <p style="text-align: center;">Convert these to Standard Form</p>
+        
+        <div id="translation-quiz">
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>1. Translate: "Every student wants to pass."</strong></p>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">All students are people who want to pass.</button>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">Some students want to pass.</button>
+            </div>
+
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>2. Translate: "Not all politicians are honest."</strong></p>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">No politicians are honest people.</button>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">Some politicians are not honest people.</button>
+            </div>
+
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>3. Translate: "A few lawyers are here."</strong></p>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">Some lawyers are people who are here.</button>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">All lawyers are here.</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <span class="tag">16. The Logical Dimensions</span>
+    <h2 style="font-size: 3rem; margin-bottom: 20px;">Quality & Quantity</h2>
+    <p style="margin-bottom: 40px; opacity: 0.8;">Every proposition is defined by these two properties. Quantity tells us <strong>how many</strong>; Quality tells us <strong>what kind of action</strong> (Affirming or Denying).</p>
+
+    <div class="logic-grid">
+        <div class="glass-panel reveal" style="max-width: 100%; border-top: 4px solid #fdbb2d;">
+            <h3 style="color: #fdbb2d;">1. Quantity (The Scope)</h3>
+            <p>Refers to the number of members of the subject class being discussed.</p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><span class="highlight">Universal:</span> Refers to <strong>All</strong> members (All, No, Every).</li>
+                <li style="margin-bottom: 10px;"><span class="highlight">Particular:</span> Refers to <strong>Some</strong> members (Some, At least one).</li>
+            </ul>
+        </div>
+
+        <div class="glass-panel reveal" style="max-width: 100%; border-top: 4px solid #00ff88;">
+            <h3 style="color: #00ff88;">2. Quality (The Nature)</h3>
+            <p>Refers to whether the proposition <strong>affirms</strong> or <strong>denies</strong> the predicate of the subject.</p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><span class="highlight">Affirmative:</span> States that S <strong>is</strong> P.</li>
+                <li style="margin-bottom: 10px;"><span class="highlight">Negative:</span> States that S <strong>is not</strong> P.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="glass-panel reveal" style="margin-top: 40px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1);">
+        <h3 style="text-align: center; color: var(--accent);">The Intersection Matrix</h3>
+        <p style="text-align: center; font-size: 0.9rem; opacity: 0.7;">Combining Quality + Quantity gives us our A, E, I, O types:</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; text-align: center;">
+            <div style="padding: 15px; background: rgba(0, 242, 255, 0.1); border-radius: 10px;">
+                <strong>A</strong><br><small>Universal Affirmative</small>
+            </div>
+            <div style="padding: 15px; background: rgba(255, 77, 77, 0.1); border-radius: 10px;">
+                <strong>E</strong><br><small>Universal Negative</small>
+            </div>
+            <div style="padding: 15px; background: rgba(0, 255, 136, 0.1); border-radius: 10px;">
+                <strong>I</strong><br><small>Particular Affirmative</small>
+            </div>
+            <div style="padding: 15px; background: rgba(253, 187, 45, 0.1); border-radius: 10px;">
+                <strong>O</strong><br><small>Particular Negative</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="glass-panel reveal" style="max-width: 100%; border: 2px solid #00ff88;">
+        <h2 style="text-align: center; color: #00ff88;">Diagnostic: Identify Quality & Quantity</h2>
+        
+        <div id="q-q-quiz">
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>1. "Some criminals are not violent." What is the Quality?</strong></p>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">Affirmative</button>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">Negative</button>
+            </div>
+
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>2. "No trespassers are welcomed." What is the Quantity?</strong></p>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">Universal</button>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">Particular</button>
+            </div>
+
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>3. A proposition that is Universal and Negative is represented by which letter?</strong></p>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">A</button>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">E</button>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">I</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section hero" style="background: radial-gradient(circle, rgba(0, 242, 255, 0.05) 0%, var(--bg) 100%);">
+    <div class="glass-panel reveal" style="text-align: center; border: 2px solid var(--logic-gold); padding: 60px;">
+        <span style="font-size: 4rem;">🌝</span>
+        <h2 style="font-size: 2.5rem; margin-top: 20px;">Chapter Complete</h2>
+        <p style="font-size: 1.2rem; opacity: 0.8;">You have navigated the architecture of logic with <br><strong>Browne Ubawuchi</strong>.</p>
+        
+        <h3 style="margin: 40px 0; letter-spacing: 2px;">DO YOU WANT TO GO TO THE NEXT CHAPTER?</h3>
+
+        <div style="display: flex; gap: 20px; justify-content: center;">
+            <button onclick="handleNextChapter('yes')" class="action-btn yes-btn">YES, PROCEED</button>
+            <button onclick="handleNextChapter('no')" class="action-btn no-btn">NO, STAY HERE</button>
+        </div>
+    </div>
+</section>
+
+<style>
+    .action-btn {
+        padding: 20px 40px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: bold;
+        font-size: 1rem;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .yes-btn {
+        background: var(--accent);
+        color: var(--bg);
+        box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+    }
+
+    .no-btn {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .yes-btn:hover { transform: scale(1.1); box-shadow: 0 0 40px var(--accent); }
+    .no-btn:hover { background: #ff4d4d; border-color: #ff4d4d; transform: scale(0.9); }
+</style>
+
+<script>
+    function handleNextChapter(choice) {
+        const synth = window.speechSynthesis;
+        
+        if (choice === 'yes') {
+            // Confetti Blast
+            confetti({
+                particleCount: 200,
+                spread: 100,
+                origin: { y: 0.6 }
+            });
+
+            // Voice Feedback
+            const utterYes = new SpeechSynthesisUtterance("Browne Told You so");
+            utterYes.pitch = 1.2;
+            utterYes.rate = 0.9;
+            synth.speak(utterYes);
+
+            // Optional: Redirect to next page after voice
+            utterYes.onend = () => {
+                alert("Redirecting to Chapter 02: Fallacies & Legal Argumentation...");
+            };
+
+        } else {
+            // Phone Vibrate
+            if (navigator.vibrate) {
+                navigator.vibrate([100, 50, 100, 50, 500]);
+            }
+
+            // Voice Feedback
+            const utterNo = new SpeechSynthesisUtterance("Browne Will Be so Mad");
+            utterNo.pitch = 0.5; // Deeper, "mad" tone
+            utterNo.rate = 0.8;
+            synth.speak(utterNo);
+
+            // Visual feedback
+            document.body.style.backgroundColor = "#2e0000";
+            setTimeout(() => {
+                document.body.style.backgroundColor = "#02040a";
+            }, 1000);
+        }
+    }
+</script>
+<div id="welcome-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 1s;">
+    <div class="glass-panel reveal" style="text-align: center; border-color: var(--accent);">
+        <h1 style="font-size: 4rem; margin-bottom: 10px;">⚖️</h1>
+        <h2 style="color: var(--accent); letter-spacing: 5px;">LOGIC & REASONING</h2>
+        <p style="opacity: 0.7;">IMSU Law 100L | Special Module</p>
+        <button onclick="startExperience()" class="action-btn yes-btn" style="margin-top: 30px;">Enter The Chamber</button>
+    </div>
+</div>
+
+<script>
+    function startExperience() {
+        // Confetti Blast
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+
+        // Voice Welcome
+        const synth = window.speechSynthesis;
+        const utter = new SpeechSynthesisUtterance("Browne welcomes you to the world of logic.");
+        utter.pitch = 1.1;
+        utter.rate = 0.9;
+        synth.speak(utter);
+
+        // Hide Overlay
+        document.getElementById('welcome-overlay').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('welcome-overlay').style.display = 'none';
+        }, 1000);
+    }
+</script>
+<section class="section">
+    <span class="tag">17. Logical Relationships</span>
+    <h2 style="font-size: 3rem; margin-bottom: 20px;">The Square of Opposition</h2>
+    <p style="margin-bottom: 40px; opacity: 0.8;">This diagram represents the <strong>Immediate Inferences</strong> you can make about the truth or falsity of one proposition based on another.</p>
+
+    <div class="logic-grid">
+        <div class="glass-panel reveal" style="border-left: 5px solid #ff4d4d;">
+            <h3 style="color: #ff4d4d;">Contradictories (A & O, E & I)</h3>
+            <p>They have <strong>opposite truth values</strong>. If A is true, O must be false. They cannot both be true and cannot both be false.</p>
+        </div>
+
+        <div class="glass-panel reveal" style="border-left: 5px solid #00f2ff;">
+            <h3 style="color: #00f2ff;">Contraries (A & E)</h3>
+            <p>Both <strong>cannot be true</strong>, but both can be false. If "All S is P" is true, then "No S is P" must be false.</p>
+        </div>
+
+        <div class="glass-panel reveal" style="border-left: 5px solid #00ff88;">
+            <h3 style="color: #00ff88;">Sub-Contraries (I & O)</h3>
+            <p>Both <strong>cannot be false</strong>, but both can be true. If "Some S is not P" is false, then "Some S is P" must be true.</p>
+        </div>
+
+        <div class="glass-panel reveal" style="border-left: 5px solid var(--logic-gold);">
+            <h3 style="color: var(--logic-gold);">Subalternation (A & I, E & O)</h3>
+            <p>Truth flows <strong>downward</strong> (if All is true, Some is true). Falsity flows <strong>upward</strong> (if Some is false, All is false).</p>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="glass-panel reveal" style="border: 2px solid var(--accent);">
+        <h2 style="text-align: center;">Square of Opposition Quiz</h2>
+        
+        <div class="quiz-item">
+            <p><strong>1. If 'A' (All S is P) is TRUE, what is the value of 'O' (Some S is not P)?</strong></p>
+            <button onclick="handleResponse(this, true)" class="quiz-btn">Always False (Contradictory)</button>
+            <button onclick="handleResponse(this, false)" class="quiz-btn">Always True</button>
+            <button onclick="handleResponse(this, false)" class="quiz-btn">Undetermined</button>
+        </div>
+
+        <div class="quiz-item" style="margin-top: 20px;">
+            <p><strong>2. Can 'A' and 'E' both be TRUE at the same time?</strong></p>
+            <button onclick="handleResponse(this, false)" class="quiz-btn">Yes, they are sub-contraries</button>
+            <button onclick="handleResponse(this, true)" class="quiz-btn">No, they are contraries</button>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <span class="tag">18. Deductive Inference</span>
+    <h2 style="font-size: 3rem; margin-bottom: 20px;">The Categorical Syllogism</h2>
+    <p style="margin-bottom: 40px; opacity: 0.8;">A syllogism is a deductive argument consisting of exactly <strong>three categorical propositions</strong> containing exactly <strong>three terms</strong>.</p>
+
+    <div class="glass-panel reveal" style="max-width: 100%; border-left: 5px solid var(--accent);">
+        <h3 style="color: var(--accent);">The 1-2-3 Rule</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+            <div class="logic-box">
+                <strong>1. Major Premise</strong>
+                <p style="font-size: 0.8rem;">Contains the Major Term (P) and Middle Term (M).</p>
+            </div>
+            <div class="logic-box">
+                <strong>2. Minor Premise</strong>
+                <p style="font-size: 0.8rem;">Contains the Minor Term (S) and Middle Term (M).</p>
+            </div>
+            <div class="logic-box">
+                <strong>3. Conclusion</strong>
+                <p style="font-size: 0.8rem;">Contains the Minor Term (S) and Major Term (P).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="glass-panel reveal" style="margin-top: 30px; border: 1px dashed rgba(255,255,255,0.2);">
+        <h3 style="text-align: center; color: var(--logic-gold);">Browne's Rules of Validity</h3>
+        <p style="text-align: center; font-size: 0.9rem; margin-bottom: 20px;">If a syllogism breaks any of these, it is <strong>Invalid</strong>.</p>
+        <ul style="column-count: 2; column-gap: 40px; font-size: 0.85rem; line-height: 1.8;">
+            <li>1. Exactly three terms.</li>
+            <li>2. Exactly three propositions.</li>
+            <li>3. Middle term must be distributed once.</li>
+            <li>4. No term distributed in conclusion if not in premise.</li>
+            <li>5. No conclusion from two negative premises.</li>
+            <li>6. If one premise is negative, conclusion must be negative.</li>
+            <li>7. No conclusion from two particular premises.</li>
+            <li>8. If one premise is particular, conclusion must be particular.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="glass-panel reveal" style="max-width: 100%; border: 2px solid var(--accent);">
+        <h2 style="text-align: center; color: var(--accent);">The Verdict Engine: Is it Valid?</h2>
+        
+        <div id="syllogism-quiz">
+            <div class="quiz-item" style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <p style="font-family: monospace; text-align: center;">
+                    All Humans are Mortal.<br>
+                    Socrates is Human.<br>
+                    Therefore, Socrates is Mortal.
+                </p>
+                <div style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
+                    <button onclick="handleResponse(this, true)" class="quiz-btn" style="width: auto; padding: 10px 30px;">VALID</button>
+                    <button onclick="handleResponse(this, false)" class="quiz-btn" style="width: auto; padding: 10px 30px;">INVALID</button>
+                </div>
+            </div>
+
+            <div class="quiz-item" style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px;">
+                <p style="font-family: monospace; text-align: center;">
+                    Some Lawyers are rich.<br>
+                    Browne is a Lawyer.<br>
+                    Therefore, Browne is rich.
+                </p>
+                <div style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
+                    <button onclick="handleResponse(this, false)" class="quiz-btn" style="width: auto; padding: 10px 30px;">VALID</button>
+                    <button onclick="handleResponse(this, true)" class="quiz-btn" style="width: auto; padding: 10px 30px;">INVALID</button>
+                </div>
+                <p style="font-size: 0.7rem; text-align: center; opacity: 0.5; margin-top: 10px;">(Hint: Rule 7 - Two Particular Premises)</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <span class="tag">19. Conditional Reasoning</span>
+    <h2 style="font-size: 3rem; margin-bottom: 20px;">Hypothetical Syllogisms</h2>
+    <p style="margin-bottom: 40px; opacity: 0.8;">Hypothetical syllogisms contain at least one hypothetical proposition as a premise. They are the logic of <strong>consequences</strong>.</p>
+
+    <div class="logic-grid">
+        <div class="glass-panel reveal" style="border-top: 4px solid #00ff88;">
+            <h3 style="color: #00ff88;">Modus Ponens (Affirming)</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8;">The "Way of Affirming." If the antecedent is true, the consequent must be true.</p>
+            <div style="background: rgba(0,255,136,0.1); padding: 10px; border-radius: 5px; font-family: monospace; margin-top: 10px;">
+                If P, then Q.<br>
+                P is true.<br>
+                ∴ Q is true.
+            </div>
+        </div>
+
+        <div class="glass-panel reveal" style="border-top: 4px solid #ff4d4d;">
+            <h3 style="color: #ff4d4d;">Modus Tollens (Denying)</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8;">The "Way of Denying." If the consequent is false, the antecedent must be false.</p>
+            <div style="background: rgba(255,77,77,0.1); padding: 10px; border-radius: 5px; font-family: monospace; margin-top: 10px;">
+                If P, then Q.<br>
+                Q is false.<br>
+                ∴ P is false.
+            </div>
+        </div>
+    </div>
+
+    <div class="glass-panel reveal" style="margin-top: 30px; border-left: 5px solid var(--accent);">
+        <h3 style="color: var(--accent);">The Chain Rule (Pure Hypothetical)</h3>
+        <p>This creates a logical bridge through multiple conditions.</p>
+        <div style="background: rgba(0, 242, 255, 0.05); padding: 20px; border-radius: 10px; font-family: monospace;">
+            If you study (P), you pass (Q).<br>
+            If you pass (Q), you graduate (R).<br>
+            ∴ If you study (P), you graduate (R).
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="glass-panel reveal" style="max-width: 100%; border: 2px solid #ff00ff;">
+        <h2 style="text-align: center; color: #ff00ff;">Logic Trap: Spot the Valid Form</h2>
+        
+        <div id="hypo-syllogism-quiz">
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>"If a person steals, they go to jail. Browne did not go to jail. Therefore, Browne did not steal."</strong> Is this valid?</p>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">YES (Modus Tollens)</button>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">NO</button>
+            </div>
+
+            <div class="quiz-item">
+                <p><strong>"If it rains, the ground is wet. The ground is wet. Therefore, it rained."</strong> Is this valid?</p>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">YES</button>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">NO (Fallacy of Affirming the Consequent)</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <span class="tag">20. The Logic of Alternatives</span>
+    <h2 style="font-size: 3rem; margin-bottom: 20px;">Disjunctive Syllogism</h2>
+    <p style="margin-bottom: 40px; opacity: 0.8;">The Disjunctive Syllogism works by <strong>Elimination</strong>. It starts with a disjunction (Either P or Q) and uses a process of denial to find the truth.</p>
+
+    <div class="logic-grid">
+        <div class="glass-panel reveal" style="border-left: 5px solid #fdbb2d;">
+            <h3 style="color: #fdbb2d;">The Rule of Tollendo Ponens</h3>
+            <p style="font-size: 0.9rem;">"The mode that affirms by denying." By denying one alternative, you automatically affirm the other.</p>
+            <div style="background: rgba(253, 187, 45, 0.1); padding: 15px; border-radius: 10px; font-family: monospace; margin-top: 15px;">
+                Either P or Q.<br>
+                Not P.<br>
+                ∴ Therefore, Q.
+            </div>
+        </div>
+
+        <div class="glass-panel reveal" style="border-left: 5px solid var(--accent);">
+            <h3 style="color: var(--accent);">Legal Application</h3>
+            <p style="font-size: 0.9rem;">"Either the defendant was at the crime scene, or he was at home. We have proven he was NOT at home."</p>
+            <p style="font-weight: bold; margin-top: 10px; color: #00ff88;">Conclusion: He was at the crime scene.</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div class="logic-box reveal">
+            <h4 style="color: white;">Inclusive Disjunction</h4>
+            <p style="font-size: 0.8rem;">"Either P or Q (or both)." Like saying "I want cream or sugar in my coffee." You could have both!</p>
+        </div>
+        <div class="logic-box reveal">
+            <h4 style="color: white;">Exclusive Disjunction</h4>
+            <p style="font-size: 0.8rem;">"Either P or Q (but not both)." Like a court verdict: "Guilty or Not Guilty." There is no middle ground.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="glass-panel reveal" style="max-width: 100%; border: 2px solid #fdbb2d;">
+        <h2 style="text-align: center; color: #fdbb2d;">The Elimination Chamber</h2>
+        <p style="text-align: center; font-size: 0.9rem;">Can you identify the valid elimination?</p>
+        
+        <div id="disjunctive-quiz">
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>"The contract is either valid or void. It is not void. Therefore, it is valid."</strong></p>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">VALID ELIMINATION</button>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">INVALID</button>
+            </div>
+
+            <div class="quiz-item">
+                <p><strong>"Either Browne is a student or he is a genius. Browne is a student. Therefore, he is not a genius."</strong> (Assume Inclusive Disjunction)</p>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">VALID</button>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">INVALID (He could be both!)</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <span class="tag">21. The Hybrid Logic</span>
+    <h2 style="font-size: 3rem; margin-bottom: 20px;">Mixed Hypothetical Syllogism</h2>
+    <p style="margin-bottom: 40px; opacity: 0.8;">In a "Mixed" syllogism, we transition from <em>possibility</em> to <em>certainty</em>. The Minor Premise acts as the trigger that activates the conclusion.</p>
+
+    <div class="logic-grid">
+        <div class="glass-panel reveal" style="border-left: 5px solid #00ff88;">
+            <h3 style="color: #00ff88;">1. Mixed Conditional</h3>
+            <p style="font-size: 0.9rem;">The most common type. It uses a <strong>Conditional</strong> major and a <strong>Categorical</strong> minor.</p>
+            <div style="background: rgba(0,255,136,0.05); padding: 15px; border-radius: 10px; font-family: monospace; margin-top: 10px;">
+                <strong>Major:</strong> If you are a Senator, you are a citizen.<br>
+                <strong>Minor:</strong> Browne is a Senator.<br>
+                <strong>Conclusion:</strong> Browne is a citizen.
+            </div>
+        </div>
+
+        <div class="glass-panel reveal" style="border-left: 5px solid #fdbb2d;">
+            <h3 style="color: #fdbb2d;">2. Mixed Disjunctive</h3>
+            <p style="font-size: 0.9rem;">Uses a <strong>Disjunctive</strong> major and a <strong>Categorical</strong> minor to eliminate options.</p>
+            <div style="background: rgba(253, 187, 45, 0.05); padding: 15px; border-radius: 10px; font-family: monospace; margin-top: 10px;">
+                <strong>Major:</strong> Either he is a thief or he is innocent.<br>
+                <strong>Minor:</strong> He is NOT a thief.<br>
+                <strong>Conclusion:</strong> He is innocent.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="glass-panel reveal" style="max-width: 100%; border: 2px solid #00ff88;">
+        <h2 style="text-align: center; color: #00ff88;">Interactive Mixed Challenge</h2>
+        <p style="text-align: center; font-size: 0.9rem;">Can you identify the valid mixed conclusion?</p>
+        
+        <div id="mixed-quiz">
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>Major: If a contract is signed, it is binding. <br>Minor: This contract is NOT signed. <br>What can we conclude?</strong></p>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">It is not binding.</button>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">No valid conclusion (Denying the Antecedent Fallacy)</button>
+            </div>
+
+            <div class="quiz-item">
+                <p><strong>Major: Either the court is sitting or it is a holiday. <br>Minor: The court is sitting. <br>What can we conclude (Exclusive)?</strong></p>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">It is not a holiday.</button>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">It is a holiday.</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <span class="tag">22. The Logical Chain</span>
+    <h2 style="font-size: 3rem; margin-bottom: 20px;">Pure Hypothetical Syllogism</h2>
+    <p style="margin-bottom: 40px; opacity: 0.8;">In a "Pure" hypothetical, we never leave the realm of possibility. We are linking conditions together to show a necessary result.</p>
+
+    <div class="glass-panel reveal" style="max-width: 100%; border-left: 5px solid #ff00ff; background: rgba(255, 0, 255, 0.02);">
+        <h3 style="color: #ff00ff;">The Law of Hypothetical Syllogism</h3>
+        <p>This is often called the <strong>Transitive Property</strong>. If A leads to B, and B leads to C, then A must lead to C.</p>
+        
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin: 30px 0; font-family: 'Courier New', monospace; font-size: 1.2rem;">
+            <div class="logic-box" style="width: 80%; text-align: center; border-color: #ff00ff;">If P → Q</div>
+            <div style="font-size: 1.5rem;">+</div>
+            <div class="logic-box" style="width: 80%; text-align: center; border-color: #ff00ff;">If Q → R</div>
+            <div style="border-top: 2px solid white; width: 90%; margin: 10px 0;"></div>
+            <div class="logic-box" style="width: 80%; text-align: center; background: rgba(255, 0, 255, 0.1);">∴ If P → R</div>
+        </div>
+    </div>
+
+    
+
+    <div class="glass-panel reveal" style="margin-top: 30px; border: 1px dashed rgba(255,255,255,0.2);">
+        <h4 style="color: var(--logic-gold);">Legal Example (The Chain of Liability)</h4>
+        <p style="font-style: italic; font-size: 0.9rem; opacity: 0.8;">
+            "If the driver is negligent (P), then an accident occurs (Q).<br>
+            If an accident occurs (Q), then the insurance must pay (R).<br>
+            Therefore, if the driver is negligent (P), the insurance must pay (R)."
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="glass-panel reveal" style="max-width: 100%; border: 2px solid #ff00ff;">
+        <h2 style="text-align: center; color: #ff00ff;">Chain Link Challenge</h2>
+        <p style="text-align: center; font-size: 0.9rem;">Complete the logical chain</p>
+        
+        <div id="pure-quiz">
+            <div class="quiz-item" style="margin-bottom: 25px;">
+                <p><strong>Premise 1: If it is a crime, it is punishable. <br>Premise 2: If it is punishable, it is against the law. <br>Conclusion: ?</strong></p>
+                <button onclick="handleResponse(this, true)" class="quiz-btn">If it is a crime, it is against the law.</button>
+                <button onclick="handleResponse(this, false)" class="quiz-btn">It is a crime, therefore it is against the law.</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <span class="tag">23. The Argumentative Trap</span>
+    <h2 style="font-size: 3rem; margin-bottom: 20px;">The Dilemma</h2>
+    <p style="margin-bottom: 40px; opacity: 0.8;">A dilemma is a syllogism with a <strong>Disjunctive Major Premise</strong> and two <strong>Conditional Minor Premises</strong>. It forces an opponent to choose between two options, both leading to the same (usually unpleasant) result.</p>
+
+    <div class="glass-panel reveal" style="max-width: 100%; border: 2px solid #ff4d4d; background: rgba(255, 77, 77, 0.05);">
+        <h3 style="color: #ff4d4d; text-align: center;">Anatomy of a Dilemma</h3>
+        <div style="font-family: 'Courier New', monospace; padding: 20px; line-height: 1.8;">
+            <p><strong>Major:</strong> Either P or Q.</p>
+            <p><strong>Minor 1:</strong> If P, then R.</p>
+            <p><strong>Minor 2:</strong> If Q, then R.</p>
+            <hr style="opacity: 0.2;">
+            <p><strong>Conclusion:</strong> ∴ R (The Trap is Sprung)</p>
+        </div>
+    </div>
+
+    
+
+    <div class="logic-grid" style="margin-top: 30px;">
+        <div class="logic-box reveal" style="border-color: #00f2ff;">
+            <h4 style="color: #00f2ff;">Escaping the Dilemma</h4>
+            <p style="font-size: 0.85rem;">1. <strong>Grasping the Horns:</strong> Proving one of the conditionals (If-Then) is false.</p>
+            <p style="font-size: 0.85rem;">2. <strong>Going Between the Horns:</strong> Finding a third option not mentioned in the 'Either-Or'.</p>
+        </div>
+    </div>
+</section>
+<section class="section hero" style="background: radial-gradient(circle, rgba(255, 0, 255, 0.07) 0%, var(--bg) 100%); min-height: 80vh; display: flex; align-items: center;">
+    <div class="glass-panel reveal" style="text-align: center; border: 3px solid var(--accent); padding: 80px 40px; width: 100%; box-shadow: 0 0 50px rgba(0, 242, 255, 0.2);">
+        <div class="float" style="font-size: 5rem; margin-bottom: 20px;">🌝</div>
+        <h2 style="font-size: 3.5rem; text-transform: uppercase; letter-spacing: 10px; margin-bottom: 10px;">End of Logic</h2>
+        <p style="font-size: 1.4rem; color: var(--logic-gold); font-weight: bold; margin-bottom: 50px;">You are now a Master of Propositions & Syllogisms.</p>
+        
+        <h3 style="margin-bottom: 40px; letter-spacing: 2px; opacity: 0.9;">DO YOU WANT TO GO TO THE NEXT CHAPTER?</h3>
+
+        <div style="display: flex; gap: 25px; justify-content: center; flex-wrap: wrap;">
+            <button onclick="finalCommand('yes')" class="action-btn yes-btn" style="padding: 25px 60px; font-size: 1.2rem;">🚀 YES, PROCEED</button>
+            <button onclick="finalCommand('no')" class="action-btn no-btn" style="padding: 25px 60px; font-size: 1.2rem;">🛑 NO, STAY</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    function finalCommand(choice) {
+        const synth = window.speechSynthesis;
+        
+        if (choice === 'yes') {
+            // 🎉 SUPER CONFETTI
+            const duration = 3 * 1000;
+            const end = Date.now() + duration;
+
+            (function frame() {
+              confetti({
+                particleCount: 5,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: ['#00f2ff', '#ff00ff']
+              });
+              confetti({
+                particleCount: 5,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: ['#00f2ff', '#ff00ff']
+              });
+
+              if (Date.now() < end) {
+                requestAnimationFrame(frame);
+              }
+            }());
+
+            // 🗣 VOICE: Browne Told You So
+            const utterYes = new SpeechSynthesisUtterance("Browne Told You so");
+            utterYes.pitch = 1.3;
+            utterYes.rate = 1.0;
+            synth.speak(utterYes);
+
+            setTimeout(() => {
+                alert("Accessing Chapter 02: Fallacies & Legal Argumentation...");
+            }, 2000);
+
+        } else {
+            // 📳 ANGRY VIBRATION
+            if (navigator.vibrate) {
+                navigator.vibrate([300, 100, 300, 100, 1000]);
+            }
+
+            // 🗣 VOICE: Browne Will Be So Mad
+            const utterNo = new SpeechSynthesisUtterance("Browne Will Be so Mad");
+            utterNo.pitch = 0.4; // Very deep
+            utterNo.rate = 0.7; // Slow and threatening
+            synth.speak(utterNo);
+
+            // 🔴 VISUAL PANIC
+            document.body.style.filter = "invert(1) hue-rotate(180deg)";
+            setTimeout(() => {
+                document.body.style.filter = "none";
+            }, 1500);
+        }
+    }
+</script>
