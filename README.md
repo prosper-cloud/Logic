@@ -1,25 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logic & Law | Browne Ubawuchi</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #02040a;
-            --accent: #00f2ff;
-            --logic-gold: #fdbb2d;
-            --glass: rgba(255, 255, 255, 0.03);
-        }
-
-        body {
-            margin: 0;
-            background-color: var(--bg);
-            color: #e0e0e0;
+i guess            color: #e0e0e0;
             font-family: 'Space Grotesk', sans-serif;
             overflow-x: hidden;
         }
